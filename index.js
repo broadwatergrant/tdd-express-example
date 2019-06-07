@@ -13,7 +13,11 @@
 
 /* Dependencies */
 
+// External dependencies
 const express = require( 'express' );
+
+// Internal dependencies
+const greeting = require( './routes/greeting' );
 
 /* Application Variables */
 
@@ -22,11 +26,7 @@ const PORT = 8080;
 
 /* Routes */
 
-app.get( '/', function( req, res ) {
-
-  res.send( 'Hello, world!' );
-
-} );
+app.post( '/hello', greeting.hello.endpoint );
 
 /* Launch Server */
 
